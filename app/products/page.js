@@ -4,10 +4,10 @@ import Image from "next/image";
 import dbConnect, { collectionNamesObj } from "@/lib/dbConnect";
 
 export default async function ProductsPage() {
-  // Connect to the products collection
+
   const productCollection = await dbConnect(collectionNamesObj.productsCollection);
 
-  // Fetch all products
+  
   const products = await productCollection.find({}).toArray();
 
   return (
@@ -16,11 +16,11 @@ export default async function ProductsPage() {
         <h1 className="text-3xl font-bold mb-6">Exclusive Products</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {products.map((product) => {
-            // Ensure the product image is valid
+           
             const productImage =
               product.product_image && (product.product_image.startsWith('/') || product.product_image.startsWith('http'))
                 ? product.product_image
-                : '/placeholder.jpg'; // fallback image
+                : '/placeholder.jpg';
 
             return (
               <div

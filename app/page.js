@@ -6,7 +6,7 @@ import ProductHighlights from "./login/components/ProductHighlights";
 
 export default function Home() {
   return (
-   <main className="mt-10">
+   <main >
   <Hero />
   <ProductHighlights />
    </main>

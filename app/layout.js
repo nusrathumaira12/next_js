@@ -21,9 +21,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="p-6">
+    <html lang="en" >
       <body>
-        {/* Wrap client components that need useSession with Providers */}
+       
         <Providers>
           <Navbar />
         </Providers>
